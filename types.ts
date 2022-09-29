@@ -1,6 +1,6 @@
-export interface GetCharacterResults {
+export interface AllUsers {
   info: Info;
-  results: Character[];
+  data: User[];
 }
 
 export interface Info {
@@ -10,39 +10,22 @@ export interface Info {
   prev: null;
 }
 
-export interface Character {
-  id: number;
-  name: string;
-  status: Status;
-  species: Species;
-  type: string;
-  gender: Gender;
-  origin: Location;
-  location: Location;
-  image: string;
-  episode: string[];
-  url: string;
-  created: Date;
-}
-
-export enum Gender {
-  Female = "Female",
-  Male = "Male",
-  Unknown = "unknown",
-}
-
-export interface Location {
-  name: string;
-  url: string;
-}
-
-export enum Species {
-  Alien = "Alien",
-  Human = "Human",
-}
-
-export enum Status {
-  Alive = "Alive",
-  Dead = "Dead",
-  Unknown = "unknown",
+export interface User {
+  _id: string;
+  email: string;
+  password: string;
+  username?: string;
+  fullname?: string;
+  role?: number[];
+  profilePictureURI?: string;
+  disabled?: boolean;
+  useSSO?: boolean;
+  key?: string;
+  secret?: string;
+  mobile?: string;
+  twoFA?: boolean;
+  lastActive?: Date;
+  deletedAt?: Date;
+  updatedAt?: Date;
+  createdAt?: Date;
 }
